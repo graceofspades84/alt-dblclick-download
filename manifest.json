@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Alt Double-Click to Download Image",
+  "version": "1.0",
+  "description": "Hold Option/Alt and double-click an image to download it.",
+  "permissions": ["downloads"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
